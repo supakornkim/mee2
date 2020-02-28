@@ -44,18 +44,18 @@
         "url": "https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
       }
     ],
-    "uniqCompNum": 34,
+    "uniqCompNum": 37,
     "versionPublish": "4.11.4",
     "screenshot": "screenshot.png",
     "favicon": "@PROJECT_PATH@/assets/images/meemoney-logo2-128x128.png",
     "": "on",
     "cssOptimize": true,
     "lazyLoad": true,
-    "robotsSwitcher": true,
+    "robotsSwitcher": false,
     "sitemapSwitcher": true,
     "sitemapSwitcherAuto": true,
     "siteUrl": "https://meemoney.com/",
-    "robotsText": "User-agent: *\nDisallow: /cgi-bin\n",
+    "robotsText": "User-agent: *\r\nDisallow: /cgi-bin\r\n",
     "lazyType": "placeholder"
   },
   "pages": {
@@ -2190,6 +2190,65 @@
         {
           "alias": false,
           "_styles": {
+            "background": "@bgColor",
+            "& when (@fullWidth = false)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
+            },
+            "& when (@gradientBg)": {
+              "background": "linear-gradient(45deg, @bgColor, @color2)"
+            },
+            ".image-block": {
+              "margin": "auto",
+              "& when (@fullWidth)": {
+                "width": "100% !important"
+              }
+            },
+            "figcaption": {
+              "position": "relative",
+              "div": {
+                "position": "absolute",
+                "bottom": "0",
+                "width": "100%"
+              }
+            },
+            "@media (max-width: 768px)": {
+              ".image-block": {
+                "width": "100% !important"
+              }
+            }
+          },
+          "_name": "image1",
+          "_customHTML": "<section group=\"Images & Videos\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" value=\"0\" step=\"1\" condition=\"fullWidth==false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" value=\"0\" step=\"1\" condition=\"fullWidth==false\">\n\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">        \n        \n        <input type=\"range\" inline title=\"Width\" name=\"imageSize\" min=\"20\" max=\"100\" value=\"30\" step=\"1\" condition=\"fullWidth==false\">\n\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\" condition=\"fullWidth==false\">\n        <input type=\"checkbox\" title=\"Gradient\" name=\"gradientBg\" condition=\"fullWidth==false\">\n        <input type=\"color\" title=\"Color 2\" name=\"color2\" value=\"#149dcc\" condition=\"gradientBg && fullWidth==false\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <figure class=\"mbr-figure\" mbr-class=\"{'container':fullWidth==false}\">\n        <div class=\"image-block\" mbr-style=\"{'width':imageSize+'%'}\">\n            <img src=\"../_images/background1.jpg\" width=\"1400\" alt=\"Mobirise\">\n            <figcaption class=\"mbr-figure-caption mbr-figure-caption-over\" mbr-if=\"showText\">\n                <div mbr-text class=\"container pb-5 mbr-white align-center mbr-fonts-style\" mbr-theme-style=\"display-1\">\n                    Create awesome websites!\n                </div>\n            </figcaption>\n        </div>\n    </figure>\n</section>",
+          "_cid": "rRLqJRRHgY",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "image1-10"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-text, blockquote": {
+              "color": "#767676"
+            }
+          },
+          "_name": "content1",
+          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"2\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><b>## ลงทุนด้วยเงินเก็บแล้วขาดทุนอยู่ใช่ไหมล่ะ? ##</b> </p><p>หากใครเน้นลงทุนในสินค้าการเงินแบบเสี่ยงๆ เพียงอย่าเดียว ไม่ว่าจะเป็น กองทุน หุ้น หรือ อสังหาฯ&nbsp;</p><p>ช่วงนี้คงใจคอไม่ดี ไม่กล้าเปิดดูพอร์ต หรือ ผลงานของตัวเองเสียเท่าไร เพราะ อาจติดตัวแดง ขาดทุน หนักกันอยู่&nbsp;<span style=\"font-size: 1rem;\">หากย้อนไป 2 ปี ดูดัชนีตลาดหลักทรัพย์แห่งประเทศไทย ณ เดือน มกราคม 2561 </span><span style=\"font-size: 1rem;\">ที่อยู่ระดับ 1800++ กับวันนี้ กุมภาพันธ์ 2563 ที่ระดับ 1500++ หรือติดลบราวๆ 16%</span></p></div>\n        </div>\n    </div>\n</section>",
+          "_cid": "rRLqjcM1le",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "content1-z"
+        },
+        {
+          "alias": false,
+          "_styles": {
             "padding-top": "(@paddingTop * 15px)",
             "padding-bottom": "(@paddingBottom * 15px)",
             "background-color": "@bgColor",
@@ -2201,13 +2260,64 @@
             }
           },
           "_name": "content1",
-          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"2\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><b>## ลงทุนด้วยเงินเก็บแล้วขาดทุนอยู่ใช่ไหมล่ะ? ##</b></p><p>หากใครเน้นลงทุนในสินค้าการเงินแบบเสี่ยงๆ เพียงอย่าเดียว ไม่ว่าจะเป็น กองทุน หุ้น หรือ อสังหาฯ&nbsp;</p><p>ช่วงนี้คงใจคอไม่ดี ไม่กล้าเปิดดูพอร์ต หรือ ผลงานของตัวเองเสียเท่าไร เพราะ อาจติดตัวแดง ขาดทุน หนักกันอยู่&nbsp;</p><p><br></p><p>หากย้อนไป 2 ปี ดูดัชนีตลาดหลักทรัพย์แห่งประเทศไทย ณ เดือน มกราคม 2561&nbsp;</p><p>ที่อยู่ระดับ 1800++  กับวันนี้ กุมภาพันธ์ 2563 ที่ระดับ 1500++ หรือติดลบราวๆ 16%&nbsp;</p><p><br></p><p>ใครที่ใส่เงินออมของตัวเอง เทไปที่สินทรัพย์เสี่ยงเพียงอย่างเดียว อาจเกิดความเครียดเมื่อเห็นเงินออมของตัวเองลดลงเรื่อยๆ&nbsp;</p><p><br></p><p>สินค้าการเงินที่เหมาะกับการเป็นจุดเริ่มต้นเก็บเงินออมของคนรุ่นใหม่ที่ยังมือใหม่มากๆ กับเรื่องการบริหารเงิน  คือ สินค้าตัวหนึ่งที่ได้รับความนิยมมากในกลุ่มเศรษฐี ใช้เป็นเครื่องมือในการเก็บเงินแบบ \"การันตีผลตอบแทน\"&nbsp;</p><p><br></p><p>#ประกันสะสมทรัพย์ หรือ #ประกันเงินออม เป็นสินค้าสำหรับมือใหม่หัดการออมเงินชั้นเลิศ เพราะ&nbsp;</p><p>#การันตีผลตอบแทน มีตัวเลขเงินที่จะได้รับให้เห็นกันตั้งแต่วันนี้ รู้เลยว่าเก็บเท่านี้ จะได้เท่าไหร่ในอนาคต ไม่ต้องเรียนรู้เรื่องของความเสี่ยง ที่เงินจะขึ้นๆลงๆ สินค้าเข้าใจง่ายตรงไปตรงมา&nbsp;</p><p><br></p><p>#ฝึกวินัยการออมเงินได้เป็นอย่างดี ประกันแบบนี้ระยะเวลายาวในการออมอาจจะยาวสักนิดนึง เก็บเงินแบบ 15 ปี 20 ปีกันไปเลย อาจจะรู้สึกว่านานหน่อย แต่การเก็บแบบนี้แหละสร้างวินัยและเห็นผล เพราะจะเกิดสิ่งที่เรียกว่า Snowball Effect พอเงินมันทบๆๆๆๆๆ ไปเรื่อยๆ จะกลายเป็นเงินก้อนที่ใหญ่ขึ้น&nbsp;</p><p><br></p><p>#ลดหย่อนภาษีได้ การออมเงินผ่านสินค้าประกันชีวิต ได้รับการสนับสนุนจากภาครัฐให้นำเบี้ยประกันที่จ่ายไปลดหย่อนภาษีได้สูงสุดถึงปีละ 100,000 บาท จะมีเงินเก็บที่ไหนที่ได้ทั้งผลตอบแทนแบบการันตีและยังลดหย่อนภาษีได้อีกด้วย หาได้ยากจริงๆ&nbsp;</p><p><br></p><p>#มีความคุ้มครอง สำหรับเริ่มต้นทำงาน ยังไม่มีภาระอะไรมากมาย แต่เราเติบโตมาได้ ด้วยเงินของใครบางคนเลี้ยงดูเรามา (พ่อ แม่ ปู่ ย่า ตา ยาย ลุง ป้า น้า อา) ห่วงพวกเขามีความคุ้มครองติดไว้เถอะ  การหายไปจากโลกนี้ มันมีค่าใช้จ่ายในการจัดการอยู่ การจะมีเงินก้อนนี้ติดตัวเป็นค่าตัวให้กับตัวเองอยู่บ้างก็เป็นเรื่องที่ควรจะมี งานศพมันไม่ได้จำกัดอายุ ใช่ว่าอายุน้อยจะตาย ไม่ได้เสียเมื่อไร&nbsp;</p><p><br></p><p>น่าเสียดายที่สินค้าประกันเงินออมดีๆ แบบนี้ ที่อยู่คู่กับเรามาช้านาน กำลังเจอพิษดอกเบี้ยต่ำ จะถูกเปลี่ยนโฉมไปตามสภาวะเศรษฐกิจ&nbsp;</p><p><br></p><p>สนใจสินค้าประกันเงินออม อย่าช้า!!! มีเวลาถึงแค่ 15 มีนาคมนี้เท่านั้น&nbsp;</p><p>คุณอาจจะพลาดประกันเงินออม การันตีผลตอบแทนดีๆ ไปตลอดชีวิต&nbsp;</p><p>.</p><p>เพียงคลิกมาคุยกัน ที่&nbsp;</p><p>http://m.me/MeeMoney&nbsp;</p><p><br></p><p>พิเศษ!!! จองสิทธิภายใน 29 กุมภาพันธ์นี้</p><p>คุณคือผู้โชคดีจะได้รับบริการให้คำปรึกษาการวางแผนการออมเงิน การลงทุน&nbsp;</p><p>จากนักวางแผนการเงิน คุณวุฒิ CFP&nbsp;</p><p>สมาคมนักวางแผนการเงินไทย</p><p><br></p><p>แอดไลน์ @MeeMoney</p><p><br></p><p>ติดตามความรู้การเงินกันได้ที่&nbsp;</p><p>Facebook : MeeMoney&nbsp;</p><p>Youtube : MeeMoney&nbsp;</p><p>Line : @MeeMoney (http://line.me/ti/p/%40MeeMoney)&nbsp;</p><p><br></p><p>#MeeMoney&nbsp;</p><p>#ประกันเงินออม&nbsp;</p><p>#อยากมีประกันดีดี&nbsp;</p></div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section article content1\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"2\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"mbr-text col-12 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\" data-multiline mbr-article mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\"><p><span style=\"font-size: 1rem;\">#ประกันสะสมทรัพย์ หรือ #ประกันเงินออม เป็นสินค้าสำหรับมือใหม่หัดการออมเงินชั้นเลิศ เพราะ&nbsp;</span><br></p><p>#การันตีผลตอบแทน มีตัวเลขเงินที่จะได้รับให้เห็นกันตั้งแต่วันนี้ รู้เลยว่าเก็บเท่านี้ จะได้เท่าไหร่ในอนาคต ไม่ต้องเรียนรู้เรื่องของความเสี่ยง ที่เงินจะขึ้นๆลงๆ สินค้าเข้าใจง่ายตรงไปตรงมา&nbsp;</p><p><br></p><p>#ฝึกวินัยการออมเงินได้เป็นอย่างดี ประกันแบบนี้ระยะเวลายาวในการออมอาจจะยาวสักนิดนึง เก็บเงินแบบ 15 ปี 20 ปีกันไปเลย อาจจะรู้สึกว่านานหน่อย แต่การเก็บแบบนี้แหละสร้างวินัยและเห็นผล เพราะจะเกิดสิ่งที่เรียกว่า Snowball Effect พอเงินมันทบๆๆๆๆๆ ไปเรื่อยๆ จะกลายเป็นเงินก้อนที่ใหญ่ขึ้น&nbsp;</p><p><br></p><p>#ลดหย่อนภาษีได้ การออมเงินผ่านสินค้าประกันชีวิต ได้รับการสนับสนุนจากภาครัฐให้นำเบี้ยประกันที่จ่ายไปลดหย่อนภาษีได้สูงสุดถึงปีละ 100,000 บาท จะมีเงินเก็บที่ไหนที่ได้ทั้งผลตอบแทนแบบการันตีและยังลดหย่อนภาษีได้อีกด้วย หาได้ยากจริงๆ&nbsp;</p><p><br></p><p>#มีความคุ้มครอง สำหรับเริ่มต้นทำงาน ยังไม่มีภาระอะไรมากมาย แต่เราเติบโตมาได้ ด้วยเงินของใครบางคนเลี้ยงดูเรามา (พ่อ แม่ ปู่ ย่า ตา ยาย ลุง ป้า น้า อา) ห่วงพวกเขามีความคุ้มครองติดไว้เถอะ  การหายไปจากโลกนี้ มันมีค่าใช้จ่ายในการจัดการอยู่ การจะมีเงินก้อนนี้ติดตัวเป็นค่าตัวให้กับตัวเองอยู่บ้างก็เป็นเรื่องที่ควรจะมี งานศพมันไม่ได้จำกัดอายุ ใช่ว่าอายุน้อยจะตาย ไม่ได้เสียเมื่อไร&nbsp;</p><p><br></p><p>น่าเสียดายที่สินค้าประกันเงินออมดีๆ แบบนี้ ที่อยู่คู่กับเรามาช้านาน กำลังเจอพิษดอกเบี้ยต่ำ จะถูกเปลี่ยนโฉมไปตามสภาวะเศรษฐกิจ&nbsp;</p><p><br></p><p>สนใจสินค้าประกันเงินออม อย่าช้า!!! มีเวลาถึงแค่ 15 มีนาคมนี้เท่านั้น&nbsp;</p><p>คุณอาจจะพลาดประกันเงินออม การันตีผลตอบแทนดีๆ ไปตลอดชีวิต&nbsp;</p><p>.</p><p>เพียงคลิกมาคุยกัน ที่&nbsp;</p><p>http://m.me/MeeMoney&nbsp;</p><p><br></p><p>พิเศษ!!! จองสิทธิภายใน 29 กุมภาพันธ์นี้</p><p>คุณคือผู้โชคดีจะได้รับบริการให้คำปรึกษาการวางแผนการออมเงิน การลงทุน&nbsp;</p><p>จากนักวางแผนการเงิน คุณวุฒิ CFP&nbsp;</p><p>สมาคมนักวางแผนการเงินไทย</p><p><br></p><p>แอดไลน์ @MeeMoney</p><p><br></p><p>ติดตามความรู้การเงินกันได้ที่&nbsp;</p><p>Facebook : MeeMoney&nbsp;</p><p>Youtube : MeeMoney&nbsp;</p><p>Line : @MeeMoney (http://line.me/ti/p/%40MeeMoney)&nbsp;</p><p><br></p><p>#MeeMoney&nbsp;</p><p>#ประกันเงินออม&nbsp;</p><p>#อยากมีประกันดีดี&nbsp;</p></div>\n        </div>\n    </div>\n</section>",
           "_cid": "rRLg8qFQ29",
           "_anchor": "content1-x",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            "& when not (@reverseContent)": {
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-right": "4rem"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".mbr-figure": {
+                  "padding-bottom": "1rem"
+                }
+              }
+            },
+            "& when (@reverseContent)": {
+              ".media-container-row": {
+                "flex-direction": "row-reverse",
+                "-webkit-flex-direction": "row-reverse"
+              },
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-left": "4rem"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".media-container-row": {
+                  "flex-wrap": "wrap-reverse",
+                  "-webkit-flex-wrap": "wrap-reverse"
+                },
+                ".mbr-figure": {
+                  "padding-top": "1rem"
+                }
+              }
+            },
+            ".mbr-text": {
+              "color": "#767676"
+            }
+          },
+          "_name": "content6",
+          "_customHTML": "<section class=\"mbr-section content6\" group=\"Article\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n      <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"1\">\n      <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n\n      <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"60\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\">  \n      <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n    \n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12 col-md-8\">\n                <div class=\"media-container-row\">\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                      <img src=\"../_images/background1.jpg\" alt=\"Mobirise\">  \n                    </div>\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\">ใครที่ใส่เงินออมของตัวเอง เทไปที่สินทรัพย์เสี่ยงเพียงอย่างเดียว อาจเกิดความเครียดเมื่อเห็นเงินออมของตัวเองลดลงเรื่อยๆ <br>สินค้าการเงินที่เหมาะกับการเป็นจุดเริ่มต้นเก็บเงินออมของคนรุ่นใหม่ที่ยังมือใหม่มากๆ กับเรื่องการบริหารเงิน คือ สินค้าตัวหนึ่งที่ได้รับความนิยมมากในกลุ่มเศรษฐี ใช้เป็นเครื่องมือในการเก็บเงินแบบ \"การันตีผลตอบแทน\" <br><br></p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "rRLqdBcc18",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "content6-y"
         },
         {
           "alias": false,
